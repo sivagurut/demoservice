@@ -1,5 +1,12 @@
 steps:
-- name: 'gcr.io/elevated-server-275615/demo-service'
-  args: [ 'build', '-t --network=cloudbuild', 'gcr.io/elevated-server-275615/demo-service', '.' ]
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/elevated-server-275615/demo-service', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/elevated-server-275615/demo-service']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'demo-service', '--image', 'gcr.io/elevated-server-275615/demo-service', '--region', '[REGION]', '--platform', 'managed', '--allow-unauthenticated']
 images:
-- 'gcr.io/elevated-server-275615/demo-service'
+- gcr.io/elevated-server-275615/demo-service
