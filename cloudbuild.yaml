@@ -1,5 +1,5 @@
 steps:
-- name: 'https://github.com/sivagurut/demoservice'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/demo-service', '.' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/elevated-server-275615/demo-service', '.' ]
 images:
-- 'gcr.io/$PROJECT_ID/demo-service'
+- 'gcr.io/elevated-server-275615/demo-service'
