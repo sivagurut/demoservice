@@ -1,4 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/docker
+ args: ['tag',
+    'gcr.io/elevated-server-275615/demo-service:oldtag',
+    'gcr.io/elevated-server-275615/demo-service:newtag'],
   args: ['build', '-t', 'gcr.io/elevated-server-275615/demo-service', '--build-arg=JAR_FILE=target/build-artifact']
-images: ['gcr.io/elevated-server-275615/demo-service']
+images: ['gcr.io/elevated-server-275615/demo-service:newtag']
