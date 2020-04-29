@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/elevated-server-275615/demo-service'
   args: [ 'build', '-t', 'gcr.io/elevated-server-275615/demo-service', '.' ]
 images:
 - 'gcr.io/elevated-server-275615/demo-service'
