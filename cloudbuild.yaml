@@ -2,5 +2,5 @@ steps:
  - name: maven:3-jdk-8
    entrypoint: mvn
    args: ['package','-Dmaven.test.skip=true']
-- name: gcr.io/cloud-builders/docker
+ - name: gcr.io/cloud-builders/docker
 images: ['gcr.io/elevated-server-275615/demo-service:0.0.1-SNAPSHOT']
