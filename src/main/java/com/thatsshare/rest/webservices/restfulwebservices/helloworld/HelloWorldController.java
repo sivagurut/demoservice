@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 //Controller
-@CrossOrigin(origins="http://34.69.161.248")
+//@CrossOrigin(origins="http://34.69.161.248")
 @RestController
 public class HelloWorldController {
 
